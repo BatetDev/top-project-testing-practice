@@ -9,3 +9,11 @@ test('shifts a single lowercase letter forward', () => {
 test('shifts another single lowercase letter forward', () => {
   expect(caesarCipher('d', 3)).toBe('g');
 });
+
+test('shifts a string with multiple letters', () => {
+  expect(caesarCipher('abc', 1)).toBe('bcd');
+});
+
+test('wraps from z to a', () => {
+  expect(caesarCipher('xyz', 3)).toBe('abc');
+});
