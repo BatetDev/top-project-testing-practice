@@ -15,11 +15,3 @@ function caesarCipher(str, shift) {
 }
 
 module.exports = caesarCipher;
-
-/*
-Find its position in the alphabet (0 for 'a', 25 for 'z'): const alphabetPosition = charCode - 'a'.charCodeAt(0);
-
-Add the shift and use modulo 26 to wrap: const newPosition = (alphabetPosition + shift) % 26;
-
-Convert back to a character code: const newCharCode = newPosition + 'a'.charCodeAt(0);
-*/
