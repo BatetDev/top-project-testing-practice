@@ -2,26 +2,28 @@
 
 const capitalize = require('../src/capitalize');
 
-test('capitalize first character of a string', () => {
-  expect(capitalize('string')).toBe('String');
-});
+describe('capitalize', () => {
+  test('capitalizes the first character of a lowercase string', () => {
+    expect(capitalize('string')).toBe('String');
+  });
 
-test('capitalizes first character of "hello world"', () => {
-  expect(capitalize('hello world')).toBe('Hello world');
-});
+  test('capitalizes only the first character in a multi-word string', () => {
+    expect(capitalize('hello world')).toBe('Hello world');
+  });
 
-test('returns empty string when input is empty', () => {
-  expect(capitalize('')).toBe('');
-});
+  test('returns an empty string when given an empty string', () => {
+    expect(capitalize('')).toBe('');
+  });
 
-test('capitalize a single character', () => {
-  expect(capitalize('a')).toBe('A');
-});
+  test('capitalizes a single character', () => {
+    expect(capitalize('a')).toBe('A');
+  });
 
-test('does not change an already capitalized string', () => {
-  expect(capitalize('Hello')).toBe('Hello');
-});
+  test('does not modify an already capitalized string', () => {
+    expect(capitalize('Hello')).toBe('Hello');
+  });
 
-test('handles string starting with non-letter', () => {
-  expect(capitalize('123hello')).toBe('123hello');
+  test('does not modify leading non-letter characters', () => {
+    expect(capitalize('123hello')).toBe('123hello');
+  });
 });
