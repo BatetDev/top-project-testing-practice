@@ -17,3 +17,11 @@ test('shifts a string with multiple letters', () => {
 test('wraps from z to a', () => {
   expect(caesarCipher('xyz', 3)).toBe('abc');
 });
+
+test('preserves uppercase letters', () => {
+  expect(caesarCipher('heLLo', 3)).toBe('khOOr');
+});
+
+test('leaves punctuation and spaces unchanged', () => {
+  expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+});
